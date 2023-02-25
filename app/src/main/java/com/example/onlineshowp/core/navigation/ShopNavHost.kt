@@ -10,6 +10,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
+import com.example.onlineshowp.ui.screens.basket.navigation.basket
+import com.example.onlineshowp.ui.screens.chat.navigation.chat
+import com.example.onlineshowp.ui.screens.favorite.navigation.favorite
+import com.example.onlineshowp.ui.screens.log_in.navigation.loginIn
+import com.example.onlineshowp.ui.screens.page_1.navigation.Page1Destination
+import com.example.onlineshowp.ui.screens.page_1.navigation.page1
+import com.example.onlineshowp.ui.screens.page_2.navigation.page2
+import com.example.onlineshowp.ui.screens.pofile.navigation.profile
+import com.example.onlineshowp.ui.screens.sign_in.navigation.SignInDestination
+import com.example.onlineshowp.ui.screens.sign_in.navigation.signIn
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 
 
@@ -20,15 +30,37 @@ fun ShopNavHost(
     onNavigateToDestination: (destination: ShopNavigationDestination, route: String?) -> Unit,
     onBackClick: () -> Unit,
     modifier: Modifier = Modifier,
-    isAuthorized: Boolean,
 ) {
 
     AnimatedNavHost(
         navController = navController,
-        startDestination = startDestination(isAuthorized),
+        startDestination = Page1Destination.route,
         modifier = modifier
     ) {
+        page1(onBackClick = onBackClick) {
 
+        }
+        page2(onBackClick = onBackClick) {
+
+        }
+        favorite(onBackClick = onBackClick) {
+
+        }
+        basket(onBackClick = onBackClick) {
+
+        }
+        chat(onBackClick = onBackClick) {
+
+        }
+        loginIn(onBackClick = onBackClick) {
+
+        }
+        signIn(onBackClick = onBackClick) {
+
+        }
+        profile(onBackClick = onBackClick) {
+
+        }
     }
 }
 
